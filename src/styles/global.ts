@@ -8,8 +8,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-    background-color: #121214;
-    color: #e1e1e6;
+    background-color: ${(props) => props.theme.COLORS.BACKGROUND};
   }
 
   body, input, textarea, button {

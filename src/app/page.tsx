@@ -1,10 +1,11 @@
-// import Image from "next/image";
-// import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
+import { Home } from './home/page';
+
+export default function App() {
   return (
     <>
-      <h1>MKS-ONLINE-STORE</h1>
+      <Home />
     </>
   );
 }

@@ -29,8 +29,10 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <QueryClientProvider client={queryClient}>
           <StyledComponentsRegistry>
-            <GlobalStyles />
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+            <ThemeProvider theme={theme}>
+              <GlobalStyles />
+              {children}
+            </ThemeProvider>
           </StyledComponentsRegistry>
         </QueryClientProvider>
       </body>
