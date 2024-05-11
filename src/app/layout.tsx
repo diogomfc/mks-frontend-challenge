@@ -1,13 +1,15 @@
-"use client"
+'use client';
 
 // import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import StyledComponentsRegistry from "./registry";
-import GlobalStyles from "./styles/global";
-import { ThemeProvider } from "styled-components";
-import theme from "./styles/theme";
+import { Montserrat } from 'next/font/google';
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+import StyledComponentsRegistry from './registry';
+import GlobalStyles from './styles/global';
+import theme from './styles/theme';
+
+import { ThemeProvider } from 'styled-components';
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -15,7 +17,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 // };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -24,11 +26,9 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <StyledComponentsRegistry>
           <GlobalStyles />
-          <ThemeProvider theme={theme}>
-            {children}
-          </ThemeProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </StyledComponentsRegistry>
-        </body>
+      </body>
     </html>
   );
 }
