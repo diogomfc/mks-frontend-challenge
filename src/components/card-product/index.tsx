@@ -1,35 +1,40 @@
-'use client';
-
 import Image from 'next/image';
 
-import { ButtonCard, Container, Content } from './style';
+import { AddToCartButton } from '@/components/add-to-card-button';
 
-import { ShoppingBag } from 'lucide-react';
+import { Container, Content } from './style';
 
-export function CardProduct() {
+type Product = {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type CardProductProps = {
+  product: Product;
+};
+
+export function CardProduct({ product }: CardProductProps) {
   return (
-    <Container>
-      <Image
-        src="/AppleWatch.png"
-        alt="Apple Watch Series 4 GPS"
-        width={111}
-        height={138}
-      />
+    <Container whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+      <Image src={product.photo} alt={product.name} width={111} height={138} />
 
       <Content>
         <div>
-          <h1>Apple Watch Series 4 GPS</h1>
+          <h1>{product.name}</h1>
           <div>
-            <span>R$399</span>
+            <span>R${product.price}</span>
           </div>
         </div>
-        <span>Redesigned from scratch and completely revised.</span>
+        <span>{product.description}</span>
       </Content>
 
-      <ButtonCard>
-        <ShoppingBag size={16} />
-        <span>COMPRAR</span>
-      </ButtonCard>
+      <AddToCartButton productId={product.id} />
     </Container>
   );
 }

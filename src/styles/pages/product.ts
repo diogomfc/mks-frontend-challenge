@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -14,8 +16,18 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 60%;
   padding: 20px;
+
+  > h1 {
+    color: ${(props) => props.theme.COLORS.BLUE_500};
+    font-size: 20px;
+  }
+
+  > span {
+    color: ${(props) => props.theme.COLORS.BLUE_500};
+    font-size: 12px;
+  }
 `;
 
 export const Content = styled.div`

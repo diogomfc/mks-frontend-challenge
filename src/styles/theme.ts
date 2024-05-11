@@ -6,6 +6,7 @@ const theme = {
     BACKGROUND: '#F9F9F9',
 
     BLUE_500: '#0F52BA',
+    BLUE_400: '#1A73E8',
 
     GRAY_600: '#373737',
     GRAY_500: '#2C2C2C',

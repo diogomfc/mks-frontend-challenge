@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+import { motion } from 'framer-motion';
+
+export const Container = styled(motion.div)`
   width: 218px;
   height: 285px;
   top: 217px;
@@ -13,6 +15,10 @@ export const Container = styled.div`
   border-radius: 8px;
 
   box-shadow: 0px 2px 8px 0px #00000022;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Content = styled.div`
@@ -64,6 +70,8 @@ export const ButtonCard = styled.button`
   justify-content: center;
   align-items: center;
 
+  cursor: pointer;
+
   margin-bottom: 0;
 
   border: none;
@@ -82,5 +90,9 @@ export const ButtonCard = styled.button`
     font-size: 14px;
     line-height: 18px;
     font-weight: 600;
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.COLORS.BLUE_400};
   }
 `;
