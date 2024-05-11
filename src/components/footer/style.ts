@@ -2,16 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: ${(props) => props.theme.COLORS.GRAY_100};
-  padding: 16px;
+  color: ${(props) => props.theme.COLORS.BLACK};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: ${(props) => props.theme.COLORS.BLACK};
+  padding: 16px;
   font-size: 12px;
   text-align: center;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
 `;

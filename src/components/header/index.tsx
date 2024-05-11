@@ -1,3 +1,5 @@
+'use client';
+
 import { ButtonCar, Container, Logo } from './style';
 
 import { ShoppingCart } from 'lucide-react';
