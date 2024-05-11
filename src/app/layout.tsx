@@ -3,11 +3,14 @@
 // import type { Metadata } from "next";
 import { Montserrat } from 'next/font/google';
 
-import StyledComponentsRegistry from './registry';
-import GlobalStyles from './styles/global';
-import theme from './styles/theme';
-
 import { ThemeProvider } from 'styled-components';
+
+import { queryClient } from '@/lib/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
+
+import GlobalStyles from '../styles/global';
+import theme from '../styles/theme';
+import StyledComponentsRegistry from './registry';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -24,10 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <StyledComponentsRegistry>
-          <GlobalStyles />
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </StyledComponentsRegistry>
+        <QueryClientProvider client={queryClient}>
+          <StyledComponentsRegistry>
+            <GlobalStyles />
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </StyledComponentsRegistry>
+        </QueryClientProvider>
       </body>
     </html>
   );

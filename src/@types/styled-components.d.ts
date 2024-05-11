@@ -1,4 +1,4 @@
-import theme from '@/app/styles/theme';
+import theme from '@/styles/theme';
 import 'styled-components';
 
 type Theme = typeof theme;

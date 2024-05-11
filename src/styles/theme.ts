@@ -1,4 +1,3 @@
-
 const theme = {
   COLORS: {
     WHITE: '#FFFFFF',
@@ -11,8 +10,8 @@ const theme = {
     GRAY_600: '#373737',
     GRAY_500: '#2C2C2C',
     GRAY_200: '#C4C4CC',
-    GRAY_100: '#EEEEEE',
-  },
+    GRAY_100: '#EEEEEE'
+  }
 };
 
 export default theme;
