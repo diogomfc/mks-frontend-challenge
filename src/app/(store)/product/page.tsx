@@ -1,6 +1,6 @@
 'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 
 import { CardProduct } from '@/components/card-product';
 import { DropdownMenu } from '@/components/dropdow-menu';
@@ -25,6 +25,14 @@ type ResultProducts = {
 };
 
 export default function Product() {
+  return (
+    <Suspense fallback={<span>Carregando...</span>}>
+      <ProductContent />
+    </Suspense>
+  );
+}
+
+function ProductContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const page = searchParams.get('page') ? Number(searchParams.get('page')) : 1;
@@ -51,7 +59,6 @@ export default function Product() {
   });
 
   const resultProducts = result as unknown as ResultProducts;
-
   console.log(resultProducts);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -60,7 +67,6 @@ export default function Product() {
       ...prevFilters,
       [name]: value
     }));
-
     router.push(
       `/product?page=1&rows=${filters.rows}&sortBy=${filters.sortBy}&orderBy=${filters.orderBy}`
     );
@@ -73,7 +79,6 @@ export default function Product() {
           <h1>Lista de produtos</h1>
           <span>{resultProducts?.count} produtos encontrados</span>
         </TitleHeader>
-
         <FiltersContainer>
           <span>Mostrar:</span>
           <DropdownMenu
