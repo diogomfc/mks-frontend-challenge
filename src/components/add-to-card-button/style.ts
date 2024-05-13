@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-// import { motion } from 'framer-motion';
-
 export const StyledButton = styled.button`
   display: flex;
   justify-content: center;

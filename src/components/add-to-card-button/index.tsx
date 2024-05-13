@@ -1,5 +1,7 @@
 'use client';
 
+import { useCart } from '@/contexts/cart-context';
+
 import { StyledButton } from './style';
 
 import { ShoppingBag } from 'lucide-react';
@@ -9,8 +11,10 @@ export interface AddToCartButtonProps {
 }
 
 export function AddToCartButton({ productId }: AddToCartButtonProps) {
+  const { addToCart } = useCart();
+
   function handleAddProductToCart() {
-    console.log(productId);
+    addToCart(productId);
   }
 
   return (

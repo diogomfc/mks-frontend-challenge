@@ -11,9 +11,7 @@ export default function StoreLayout({ children }: { children: ReactNode }) {
   return (
     <Container>
       <Header />
-
       <Main>{children}</Main>
-
       <Footer />
     </Container>
   );

@@ -16,7 +16,7 @@ export type GetProductsResponse = {
   price: string;
   createdAt: string;
   updatedAt: string;
-};
+}[];
 
 export async function getProducts({
   page,

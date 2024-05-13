@@ -1,8 +1,7 @@
 'use client';
 
-import { ButtonCar, Container, Logo } from './style';
-
-import { ShoppingCart } from 'lucide-react';
+import { CartWidget } from '../cart-widget';
+import { Container, Logo } from './style';
 
 export function Header() {
   return (
@@ -11,10 +10,8 @@ export function Header() {
         <h1>MKS</h1>
         <span>Sistemas</span>
       </Logo>
-      <ButtonCar>
-        <ShoppingCart />
-        <span>0</span>
-      </ButtonCar>
+
+      <CartWidget />
     </Container>
   );
 }

@@ -8,8 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //height: calc(100vh - 200px);
-  //height: 100vh;
 `;
 
 export const HeaderContainer = styled.div`
@@ -18,6 +16,10 @@ export const HeaderContainer = styled.div`
   align-items: center;
   width: 60%;
   padding: 20px;
+`;
+export const TitleHeader = styled.div`
+  display: flex;
+  flex-direction: column;
 
   > h1 {
     color: ${(props) => props.theme.COLORS.BLUE_500};
@@ -38,4 +40,13 @@ export const Content = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 24px;
+`;
+export const FiltersContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  > span {
+    color: ${(props) => props.theme.COLORS.GRAY_600};
+    font-size: 12px;
+  }
 `;
