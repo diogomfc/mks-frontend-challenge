@@ -22,13 +22,20 @@ type CardProductProps = {
 export function CardProduct({ product }: CardProductProps) {
   return (
     <Container whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-      <Image src={product.photo} alt={product.name} width={111} height={138} />
+      <Image
+        src={product.photo}
+        alt={product.name}
+        width={111}
+        height={138}
+        aria-label={product.name}
+      />
 
       <Content>
         <div>
           <h1>{product.name}</h1>
           <div>
-            <span>R${product.price}</span>
+            <span>R$</span>
+            <span>{product.price}</span>
           </div>
         </div>
         <span>{product.description}</span>

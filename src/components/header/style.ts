@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styled from 'styled-components';
 
 export const Container = styled.header`
@@ -13,6 +15,11 @@ export const Container = styled.header`
   left: 0;
 
   z-index: 1000;
+  > div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
 `;
 
 export const Logo = styled.div`
@@ -26,5 +33,25 @@ export const Logo = styled.div`
   }
   > span {
     font-size: 1rem;
+  }
+`;
+
+export const Divider = styled.div`
+  border-right: 1px solid ${(props) => props.theme.COLORS.GRAY_200};
+  height: 20px;
+  margin: 0 5px;
+`;
+
+export const GitHubLink = styled(Link)`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: ${(props) => props.theme.COLORS.WHITE};
+  font-size: 12px;
+  text-decoration: none;
+  text-underline-offset: 5px;
+  &:hover {
+    text-decoration: underline;
+    color: ${(props) => props.theme.COLORS.GRAY_100};
   }
 `;

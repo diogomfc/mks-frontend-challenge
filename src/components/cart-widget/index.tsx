@@ -41,9 +41,9 @@ export function CartWidget() {
 
   return (
     <div>
-      <CartContainer onClick={handleOpenModal}>
-        <ShoppingCart size={24} />
-        <span>{items.length}</span>
+      <CartContainer aria-label="Carrinho de compras" onClick={handleOpenModal}>
+        <ShoppingCart aria-label="Sacola de compras" size={24} />
+        <span aria-label="Quantidade de itens no carrinho">{items.length}</span>
       </CartContainer>
       {isOpen && allProducts && (
         <ModelCartItens

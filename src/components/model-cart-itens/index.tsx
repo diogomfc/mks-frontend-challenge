@@ -48,6 +48,7 @@ export function ModelCartItens({
 
   return (
     <ModalContainer
+      id="modal-container"
       initial={{ x: '100%' }}
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
@@ -55,7 +56,7 @@ export function ModelCartItens({
     >
       <Header>
         <h2>Carrinho de compras</h2>
-        <button onClick={handleCloseModal}>
+        <button aria-label="Fechar modal" onClick={handleCloseModal}>
           <X size={20} />
         </button>
       </Header>
@@ -82,6 +83,7 @@ export function ModelCartItens({
               >
                 <div>
                   <Image
+                    aria-label="Imagem do produto"
                     src={item.product?.photo ?? ''}
                     alt={item.product?.name ?? ''}
                     width={50}
@@ -94,6 +96,7 @@ export function ModelCartItens({
                   <span>Qtd:</span>
                   <div>
                     <button
+                      aria-label="Diminuir quantidade do item"
                       disabled={item.quantity === 1}
                       onClick={() => handleDecreaseQuantity(item.productId)}
                     >
@@ -103,6 +106,7 @@ export function ModelCartItens({
                     <h1>{item.quantity}</h1>
                     <span>|</span>
                     <button
+                      aria-label="Aumentar quantidade do item"
                       disabled={item.quantity === 10}
                       onClick={() => handleIncreaseQuantity(item.productId)}
                     >
@@ -112,11 +116,14 @@ export function ModelCartItens({
                 </ProductItemQuantity>
 
                 <span>
-                  R$
+                  <span>R$</span>
                   {Number(item.product?.price).toFixed(2).replace('.00', '')}
                 </span>
 
-                <button onClick={() => handleRemoveFromCart(item.productId)}>
+                <button
+                  aria-label="Remover item do carrinho"
+                  onClick={() => handleRemoveFromCart(item.productId)}
+                >
                   <X size={20} />
                 </button>
               </motion.li>

@@ -1,12 +1,12 @@
 'use client';
 import { ReactNode, createContext, useContext, useState } from 'react';
 
-interface CartItem {
+export interface CartItem {
   productId: number;
   quantity: number;
 }
 
-interface CartContextType {
+export interface CartContextType {
   items: CartItem[];
   addToCart: (productId: number) => void;
   increaseQuantity: (productId: number) => void;
@@ -14,7 +14,7 @@ interface CartContextType {
   removeFromCart: (productId: number) => void;
 }
 
-const CartContext = createContext({} as CartContextType);
+export const CartContext = createContext({} as CartContextType);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);

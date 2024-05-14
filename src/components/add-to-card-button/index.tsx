@@ -15,11 +15,16 @@ export function AddToCartButton({ productId }: AddToCartButtonProps) {
 
   function handleAddProductToCart() {
     addToCart(productId);
+    console.log(productId);
   }
 
   return (
-    <StyledButton type="button" onClick={handleAddProductToCart}>
-      <ShoppingBag size={16} />
+    <StyledButton
+      aria-label="Adicionar ao carrinho"
+      type="button"
+      onClick={handleAddProductToCart}
+    >
+      <ShoppingBag size={16} aria-label="Sacola de compras" />
       <span> Adicionar ao carrinho</span>
     </StyledButton>
   );
